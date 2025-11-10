@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Spotlight } from '@/components/ui/spotlight-new';
 
 export default function HeroSection() {
   return (
@@ -11,30 +12,25 @@ export default function HeroSection() {
         }} />
       </div>
 
+      {/* Spotlight Effect */}
+      <Spotlight
+        gradientFirst="radial-gradient(68.54% 68.72% at 55.02% 31.46%, rgba(107, 45, 255, 0.18) 0, rgba(107, 45, 255, 0.10) 50%, rgba(107, 45, 255, 0) 80%)"
+        gradientSecond="radial-gradient(50% 50% at 50% 50%, rgba(255, 74, 183, 0.15) 0, rgba(255, 74, 183, 0.08) 80%, transparent 100%)"
+        gradientThird="radial-gradient(50% 50% at 50% 50%, rgba(230, 255, 58, 0.12) 0, rgba(230, 255, 58, 0.06) 80%, transparent 100%)"
+        translateY={-200}
+        width={800}
+        height={1600}
+        smallWidth={300}
+        duration={8}
+        xOffset={150}
+      />
+
       <div className="relative z-10 container pb-20 pt-32">
-        <div className="space-y-6 max-w-4xl">
-          {/* Blue Wave Decorative Element */}
-          <div className="absolute -left-20 top-20 opacity-20">
-            <svg
-              width="300"
-              height="150"
-              viewBox="0 0 400 200"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 100 Q100 20, 200 60 T400 50"
-                stroke="var(--c-blue)"
-                strokeWidth="6"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-          </div>
+        <div className="space-y-6 max-w-4xl pb-24 md:pb-0">
           <div className="eyebrow text-[var(--c-neon)]">
             Brant County Dental Society
           </div>
-          <h1 className="display-hero text-[clamp(3rem,9vw,8rem)] text-[var(--c-paper)] leading-[0.9]">
+          <h1 className="display-hero text-[clamp(3rem,9vw,8rem)] text-[var(--c-paper)] leading-[1.1]">
             UNITING AT THE
             <br />
             FRONTIER OF
