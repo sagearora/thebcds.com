@@ -82,7 +82,7 @@ body {
 .display-hero {
   font-family: var(--font-display);
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.025em;
   line-height: 0.9;
   text-transform: uppercase;
 }
