@@ -14,9 +14,9 @@ export default function HeroSection() {
 
       {/* Spotlight Effect */}
       <Spotlight
-        gradientFirst="radial-gradient(68.54% 68.72% at 55.02% 31.46%, rgba(107, 45, 255, 0.18) 0, rgba(107, 45, 255, 0.10) 50%, rgba(107, 45, 255, 0) 80%)"
-        gradientSecond="radial-gradient(50% 50% at 50% 50%, rgba(255, 74, 183, 0.15) 0, rgba(255, 74, 183, 0.08) 80%, transparent 100%)"
-        gradientThird="radial-gradient(50% 50% at 50% 50%, rgba(230, 255, 58, 0.12) 0, rgba(230, 255, 58, 0.06) 80%, transparent 100%)"
+        gradientFirst="radial-gradient(68.54% 68.72% at 55.02% 31.46%, rgba(107, 45, 255, 0.09) 0, rgba(107, 45, 255, 0.05) 50%, rgba(107, 45, 255, 0) 80%)"
+        gradientSecond="radial-gradient(50% 50% at 50% 50%, rgba(255, 74, 183, 0.075) 0, rgba(255, 74, 183, 0.04) 80%, transparent 100%)"
+        gradientThird="radial-gradient(50% 50% at 50% 50%, rgba(230, 255, 58, 0.06) 0, rgba(230, 255, 58, 0.03) 80%, transparent 100%)"
         translateY={-200}
         width={800}
         height={1600}
@@ -25,7 +25,7 @@ export default function HeroSection() {
         xOffset={150}
       />
 
-      <div className="relative z-10 container pb-20 pt-32">
+      <div className="relative z-50 container pb-20 pt-32">
         <div className="space-y-6 max-w-4xl pb-24 md:pb-0">
           <div className="eyebrow text-[var(--c-neon)]">
             Brant County Dental Society
@@ -59,7 +59,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 animate-bounce">
         <div className="w-6 h-10 rounded-full border-2 border-[var(--c-cloud)] flex items-start justify-center p-2">
           <div className="w-1.5 h-1.5 rounded-full bg-[var(--c-neon)] animate-pulse" />
         </div>
