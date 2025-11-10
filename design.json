@@ -1,0 +1,519 @@
+{
+    "meta": {
+        "site": "Mews Unfold",
+        "url": "[https://www.mewsunfold.com/](https://www.mewsunfold.com/)",
+        "design_intent": "Bold, editorial event site with oversized typography, high-contrast palettes, cinematic media, and kinetic scroll-driven motion.",
+        "breakpoints_px": {
+            "xs": 0,
+            "sm": 600,
+            "md": 900,
+            "lg": 1200,
+            "xl": 1440
+        },
+        "max_content_width_px": 1200,
+        "grid": {
+            "columns": 12,
+            "gutter_px": 24,
+            "section_spacing_vh": {
+                "hero": 100,
+                "default": 18,
+                "compact": 10
+            }
+        }
+    },
+    "palette": {
+        "primary": {
+            "ink": "#0A0A0A",
+            "paper": "#FFFBF2"
+        },
+        "accent": {
+            "neon_lime": "#E6FF3A",
+            "electric_pink": "#FF4AB7",
+            "royal_purple": "#6B2DFF"
+        },
+        "support": {
+            "cloud": "#F2F2F2",
+            "steel": "#2B2B2B",
+            "mid_grey": "#9A9A9A"
+        },
+        "usage": {
+            "background": [
+                "paper",
+                "cloud",
+                "ink (for dark sections)"
+            ],
+            "text_default": "ink on light; paper on dark",
+            "cta": "neon_lime background with ink text",
+            "links": "ink underlined or neon_lime hover",
+            "dividers": "cloud on light; steel on dark"
+        }
+    },
+    "typography": {
+        "stacks": {
+            "display": "'Impact', 'Anton', 'Bebas Neue', 'Arial Black', system-ui, sans-serif",
+            "sans": "'Inter', 'Satoshi', 'HK Grotesk', system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+            "mono_numerals": "'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace"
+        },
+        "scale": {
+            "display_hero_clamp": "clamp(48px, 9vw, 128px)",
+            "display_section_clamp": "clamp(36px, 6vw, 80px)",
+            "h2": "clamp(28px, 3.5vw, 48px)",
+            "h3": "clamp(22px, 2.4vw, 32px)",
+            "body_lg": 18,
+            "body_md": 16,
+            "eyebrow": 12,
+            "numeral_badge": "clamp(36px, 7vw, 72px)"
+        },
+        "weights": {
+            "display": 900,
+            "heading": 800,
+            "body": 400,
+            "ui_bold": 700
+        },
+        "letterspacing": {
+            "tight": "-0.02em",
+            "normal": "0",
+            "wide_ui": "0.06em"
+        },
+        "treatments": {
+            "caps": true,
+            "eyebrow_case": "uppercase",
+            "big_numbers": "tabular-nums; often mono"
+        }
+    },
+    "radii": {
+        "none": 0,
+        "soft": 8,
+        "card": 16,
+        "pill": 9999
+    },
+    "shadows": {
+        "card": "0 8px 24px rgba(0,0,0,0.08)",
+        "elevated": "0 12px 40px rgba(0,0,0,0.12)"
+    },
+    "media": {
+        "hero_video": {
+            "present": true,
+            "loop_muted_autoplay": true,
+            "overlay": "dark gradient 40–60% for type legibility"
+        },
+        "image_style": {
+            "tone": "high-saturation event lighting; avoid relying on this for palette",
+            "corners": "soft 8–16px",
+            "captions": "rare; images are content-forward tiles"
+        }
+    },
+    "components": {
+        "header": {
+            "type": "transparent over hero; becomes solid on scroll",
+            "height_px": 72,
+            "logo_lockup": "left",
+            "cta_button": {
+                "label": "Get your ticket",
+                "style": "accent neon_lime pill, ink text"
+            },
+            "hamburger": "right; opens full-screen menu grid"
+        },
+        "nav_drawer": {
+            "pattern": "fullscreen overlay with tile-like links and large labels",
+            "animation": "fade/scale in, menu items staggered by 60–100ms",
+            "includes": [
+                "Speakers",
+                "Agenda",
+                "Venue",
+                "Awards",
+                "Merch",
+                "FAQs"
+            ]
+        },
+        "hero": {
+            "title_style": "display_hero; heavy; left-bottom aligned over video",
+            "supporting_kickers": [
+                "Volume ##",
+                "Date",
+                "City",
+                "Venue"
+            ],
+            "ctas": [
+                "Get your ticket",
+                "Tickets (secondary)"
+            ]
+        },
+        "kpis": {
+            "items": [
+                {
+                    "label": "Hoteliers",
+                    "value": "700+"
+                },
+                {
+                    "label": "Sessions",
+                    "value": "12"
+                },
+                {
+                    "label": "Afterparty",
+                    "value": "1"
+                }
+            ],
+            "layout": "3-up with image tiles inline"
+        },
+        "reasons_tabs": {
+            "headline": "4 reasons why you should attend",
+            "controls": [
+                "01",
+                "02",
+                "03",
+                "04"
+            ],
+            "panels": [
+                "Trend-setting",
+                "Actionable",
+                "Collaborative",
+                "Balanced"
+            ],
+            "interaction": "click or hover tabs swaps image+copy",
+            "note": "numerals are oversized badges at left of copy"
+        },
+        "quotes_strip": {
+            "format": "image-backed testimonial cards with name + org",
+            "count": 3
+        },
+        "award_callout": {
+            "badge": "circular sticker with neon fill + black ring",
+            "copy": "shortlisted announcement with brief explainer"
+        },
+        "tickets": {
+            "headline": "Unfold 2026 is for hoteliers...",
+            "columns": [
+                {
+                    "title": "Hotelier Tickets",
+                    "body": "eligibility blurb",
+                    "cta": "Get your ticket"
+                },
+                {
+                    "title": "Non-Hotelier Tickets",
+                    "body": "eligibility blurb",
+                    "cta": "Get your ticket"
+                }
+            ],
+            "card_style": "two side-by-side cards; soft radius; subtle shadow"
+        },
+        "resources": {
+            "layout": "3 tile cards; image or color block with concise label + tiny sublabel",
+            "items_examples": [
+                "Unfold Unpacked 2025",
+                "Matt Talks Podcast",
+                "Ultimate PMS Buyer's Guide 2026"
+            ]
+        },
+        "countdown_marquee": {
+            "text": "### DAYS TO GO",
+            "pattern": "horizontal repeating marquee ribbon",
+            "speed": "slow constant"
+        },
+        "cta_banner": {
+            "title": "Get your Unfold 2026 ticket",
+            "bg": "cinematic still/video with dark overlay",
+            "subcopy": "one-sentence value statement",
+            "meta": [
+                "Volume 07",
+                "27 May 2026",
+                "Amsterdam",
+                "Muziekgebouw"
+            ]
+        },
+        "footer": {
+            "style": "tag-cloud sitemap with small uppercase links",
+            "notes": [
+                "tiny copyright",
+                "credit link: Code by Dennis"
+            ]
+        },
+        "buttons": {
+            "default": {
+                "shape": "pill",
+                "padding": "12px 20px",
+                "font": "ui_bold / wide_ui tracking",
+                "variants": {
+                    "primary": {
+                        "bg": "neon_lime",
+                        "fg": "ink"
+                    },
+                    "ghost": {
+                        "bg": "transparent",
+                        "fg": "ink",
+                        "border": "1px ink"
+                    },
+                    "dark": {
+                        "bg": "ink",
+                        "fg": "paper"
+                    }
+                },
+                "hover": "translateY(-1px); shadow: elevated; color invert on dark sections"
+            },
+            "chip": {
+                "shape": "pill",
+                "size": "eyebrow",
+                "use": "filters, tag clouds"
+            }
+        },
+        "cards": {
+            "base": {
+                "bg": "paper",
+                "radius": "card",
+                "shadow": "card",
+                "padding": 24
+            },
+            "image_card": {
+                "ratio": "16:9",
+                "overlay_label": true
+            }
+        },
+        "logos_grid": {
+            "columns": {
+                "xs": 2,
+                "md": 4,
+                "lg": 6
+            },
+            "desaturation": "slight; on hover restores color"
+        }
+    },
+    "motion": {
+        "library_assumptions": [
+            "GSAP with ScrollTrigger",
+            "Lenis (or similar) smooth scrolling"
+        ],
+        "easing": {
+            "enter": "cubic-bezier(0.16, 1, 0.3, 1)",
+            "exit": "cubic-bezier(0.7, 0, 0.3, 1)"
+        },
+        "durations_ms": {
+            "xs": 180,
+            "sm": 260,
+            "md": 420,
+            "lg": 700
+        },
+        "stagger_ms": 80,
+        "scroll_reveals": {
+            "y_translate_px": [
+                16,
+                24
+            ],
+            "opacity_from": 0,
+            "once": true,
+            "threshold": 0.12
+        },
+        "parallax": {
+            "hero_title_y": [
+                -10,
+                10
+            ],
+            "media_slowdown_factor": 0.85
+        },
+        "marquee": {
+            "speed_pct_vw_per_s": 6,
+            "direction": "ltr; loop infinite"
+        },
+        "count_up_numbers": {
+            "targets": [
+                ".kpi .value"
+            ],
+            "duration_ms": 1200,
+            "easing": "power3.out",
+            "once": true
+        },
+        "tab_switch": {
+            "reasons_tabs": {
+                "out": {
+                    "opacity": 0,
+                    "scale": 0.98,
+                    "duration": 0.2
+                },
+                "in": {
+                    "opacity": 1,
+                    "y": 0,
+                    "duration": 0.35
+                }
+            }
+        }
+    },
+    "sections": [
+        {
+            "id": "hero",
+            "layout": "full-bleed media with bottom-left title stack",
+            "elements": [
+                "menu button",
+                "logo",
+                "primary CTA",
+                "event meta"
+            ],
+            "animations": [
+                "video autoplay",
+                "subtle title parallax",
+                "header transparency-to-solid on scroll"
+            ],
+            "evidence": [
+                "turn1view0:L791-L797"
+            ]
+        },
+        {
+            "id": "kpis",
+            "layout": "3-up stats with adjacent thumbnails",
+            "content_examples": [
+                "700+",
+                "12",
+                "1"
+            ],
+            "animations": [
+                "count-up on enter",
+                "images fade/translate in"
+            ],
+            "evidence": [
+                "turn1view0:L666-L681"
+            ]
+        },
+        {
+            "id": "reasons",
+            "layout": "left numeric tabs (01–04) with right image + copy",
+            "animations": [
+                "tabbed swap; image crossfade; copy slide/fade"
+            ],
+            "evidence": [
+                "turn1view0:L689-L721"
+            ]
+        },
+        {
+            "id": "testimonials_award",
+            "layout": "carousel/strip of quotes followed by award badge block",
+            "animations": [
+                "quote cards slide-in",
+                "badge pulse/hover wobble"
+            ],
+            "evidence": [
+                "turn1view0:L723-L746"
+            ]
+        },
+        {
+            "id": "tickets",
+            "layout": "two cards side-by-side",
+            "animations": [
+                "card hover lift",
+                "cta micro-bounce on hover"
+            ],
+            "evidence": [
+                "turn1view0:L746-L766"
+            ]
+        },
+        {
+            "id": "resources",
+            "layout": "3 resource tiles",
+            "animations": [
+                "tile reveal on scroll",
+                "underlines draw on hover"
+            ],
+            "evidence": [
+                "turn1view0:L766-L773"
+            ]
+        },
+        {
+            "id": "countdown_marquee",
+            "layout": "multi-row repeating ticker ribbon",
+            "animations": [
+                "continuous marquee loop"
+            ],
+            "evidence": [
+                "turn1view0:L774-L780"
+            ]
+        },
+        {
+            "id": "cta_banner",
+            "layout": "full-bleed media with centered stack and ticket CTA",
+            "animations": [
+                "content fade-up",
+                "bg ken-burns/light parallax"
+            ],
+            "evidence": [
+                "turn1view0:L782-L797"
+            ]
+        },
+        {
+            "id": "footer",
+            "layout": "newsletter link + tag-cloud sitemap + tiny legal + credit",
+            "animations": [
+                "links underline-on-hover",
+                "soft fade on appear"
+            ],
+            "evidence": [
+                "turn1view0:L798-L818"
+            ]
+        }
+    ],
+    "interaction_states": {
+        "focus": {
+            "ring": "2px solid currentColor; offset 2px",
+            "contrast": "4.5:1 minimum"
+        },
+        "hover": {
+            "buttons": "elevated shadow, slight upshift",
+            "links": "underline expand or color to neon_lime"
+        },
+        "active": {
+            "buttons": "translateY(0); shadow reduce"
+        }
+    },
+    "layout_rules": {
+        "section_headers": {
+            "eyebrow": "uppercase, wide_ui tracking",
+            "title": "display_section_clamp with tight tracking",
+            "lead": "body_lg max-width 65ch"
+        },
+        "content_widths": {
+            "narrow_ch": 55,
+            "standard_ch": 70,
+            "wide_px": 1200
+        },
+        "image_treatment": {
+            "radius": "soft",
+            "shadow": "card",
+            "hover_zoom": "scale(1.02)"
+        }
+    },
+    "accessibility": {
+        "prefers_reduced_motion": "disable parallax & marquee; replace with fades",
+        "video_controls": "provide play/pause and mute; default muted",
+        "link_targets": "avoid target=_blank unless external; indicate with icon",
+        "keyboard_nav": "trap focus in open menu; ESC closes"
+    },
+    "replication_guidelines": {
+        "do": [
+            "Use oversized, heavy display type and generous whitespace.",
+            "Anchor sections with strong numerals and short, declarative headings.",
+            "Use a neon accent sparingly for primary CTAs and badges.",
+            "Drive the narrative with scrollytelling (reveal, count-up, marquee)."
+        ],
+        "avoid": [
+            "Overusing gradients; keep surfaces solid and contrasty.",
+            "Thin body fonts; maintain legibility against media.",
+            "Busy hover effects; prioritize motion with purpose."
+        ],
+        "tech_stack_suggestion": [
+            "GSAP + ScrollTrigger for reveals and counters",
+            "Lenis (or smooth-scroll alternative)",
+            "IntersectionObserver fallback for no-JS animation",
+            "CSS @media (prefers-reduced-motion) guardrails"
+        ]
+    },
+    "tokens_for_code": {
+        "css_vars": {
+            "--c-ink": "#0A0A0A",
+            "--c-paper": "#FFFBF2",
+            "--c-neon": "#E6FF3A",
+            "--c-steel": "#2B2B2B",
+            "--radius-card": "16px",
+            "--radius-pill": "9999px",
+            "--shadow-card": "0 8px 24px rgba(0,0,0,0.08)"
+        }
+    },
+    "sources": [
+        "Homepage content structure and copy evidence: ([mewsunfold.com][1])"
+    ]
+}
