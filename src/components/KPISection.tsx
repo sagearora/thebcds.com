@@ -5,24 +5,24 @@ export default function KPISection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="text-center space-y-4">
             <div className="display-section text-[clamp(3rem,7vw,5rem)] text-[var(--c-royal-purple)]">
-              85+
+              100+
             </div>
             <div className="eyebrow text-[var(--c-mid-grey)]">
-              MEMBERS
+              YEARS OLD
             </div>
             <p className="text-base text-[var(--c-steel)]">
-              Dentists, hygienists, and dental professionals across Ontario
+              Building community and advancing dental excellence
             </p>
           </div>
           <div className="text-center space-y-4">
             <div className="display-section text-[clamp(3rem,7vw,5rem)] text-[var(--c-electric-pink)]">
-              25+
+              44+
             </div>
             <div className="eyebrow text-[var(--c-mid-grey)]">
-              YEARS
+              DENTISTS
             </div>
             <p className="text-base text-[var(--c-steel)]">
-              Building community and advancing dental excellence
+              Across Brant, Haldimand and Norfolk county
             </p>
           </div>
           <div className="text-center space-y-4">
