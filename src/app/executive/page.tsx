@@ -17,7 +17,7 @@ export default function ExecutivePage() {
       name: 'Dr. Mike Veer',
       role: 'Vice-President',
       email: 'vp@thebcds.com',
-      image: null,
+      image: '/images/executive/mike-veer.png',
       borderColor: 'var(--c-electric-pink)',
     },
     {
