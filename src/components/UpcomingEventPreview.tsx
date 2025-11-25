@@ -2,16 +2,10 @@ import Link from 'next/link';
 import { allEvents, Event } from '@/data/events';
 
 export default function UpcomingEventPreview() {
-  // Get the next upcoming event
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const upcomingEvents = allEvents.filter(event => {
-    if (event.isTBC) return true; // TBC events are always upcoming
-    return event.dateValue >= today;
-  }).sort((a, b) => a.dateValue.getTime() - b.dateValue.getTime());
-
-  const nextEvent = upcomingEvents[0];
+  // Get the January 27, 2026 event specifically
+  const nextEvent = allEvents.find(event => 
+    event.dateValue.getTime() === new Date('2026-01-27').getTime()
+  );
 
   if (!nextEvent) {
     return null;

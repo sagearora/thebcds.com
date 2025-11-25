@@ -58,6 +58,7 @@ export const allEvents: Event[] = [
     type: 'Lecture',
     description: 'Join Dr. Deborah O\'Reilly for an informative session on practical orthodontic techniques and applications.',
     accent: 'var(--c-royal-purple)',
+    registrationUrl: 'https://ontariodentalassociation.formstack.com/forms/brant_business_meeting_jan_27_2026',
   },
   {
     id: 5,
