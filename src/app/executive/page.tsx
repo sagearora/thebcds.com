@@ -38,7 +38,7 @@ export default function ExecutivePage() {
       name: 'Dr. Jennifer Gurney-Ozog',
       role: 'ODA Representative to General Council',
       email: 'odarep@thebcds.com',
-      image: null,
+      image: '/images/executive/jennifer-gurney.jpg',
       borderColor: 'var(--c-electric-pink)',
     },
     {
