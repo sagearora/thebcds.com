@@ -62,14 +62,15 @@ export const allEvents: Event[] = [
   },
   {
     id: 5,
-    title: 'Minimally Invasive Caries Management & Periodontal Disease Management',
+    title: 'RCDSO Update: Up Close and Personal with District 7 RCDSO Councillor Dr. Erin Walker',
     date: 'February 24, 2026',
     dateValue: new Date('2026-02-24'),
     time: '6:30 PM',
-    location: 'The Olde School Restaurant',
+    location: 'Olde School Restaurant, 687 Powerline Rd, Brantford, ON',
     type: 'Lecture',
-    description: 'Explore modern approaches to minimally invasive caries management and effective periodontal disease management strategies.',
+    description: 'Join Dr. Walker for an informative session and Q&A regarding updates from the College. Free for PAID Brant County/Haldimand–Norfolk Dental Society members. This meeting is open to members of Brant County Dental Society and Haldimand–Norfolk Dental Society. Sponsored by Nobel Biocare.',
     accent: 'var(--c-electric-pink)',
+    ceCredits: 'Category 2 CE Credits',
   },
   {
     id: 6,
