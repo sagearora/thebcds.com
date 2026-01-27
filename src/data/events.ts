@@ -71,6 +71,7 @@ export const allEvents: Event[] = [
     description: 'Join Dr. Walker for an informative session and Q&A regarding updates from the College. Free for PAID Brant County/Haldimand–Norfolk Dental Society members. This meeting is open to members of Brant County Dental Society and Haldimand–Norfolk Dental Society. Sponsored by Nobel Biocare.',
     accent: 'var(--c-electric-pink)',
     ceCredits: 'Category 2 CE Credits',
+    registrationUrl: 'https://ontariodentalassociation.formstack.com/forms/brant_business_meeting_feb_24_2026',
   },
   {
     id: 6,
