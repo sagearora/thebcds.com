@@ -4,12 +4,58 @@ import Link from 'next/link';
 import { allEvents } from '@/data/events';
 
 export default function UpcomingPage() {
-  // Get the January 27, 2026 event specifically
-  const secondEvent = allEvents.find(event => 
-    event.dateValue.getTime() === new Date('2026-01-27').getTime()
-  );
+  // Get today's date and set time to start of day for comparison
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  // Check if there's an event happening today
+  const hasEventToday = allEvents.some(event => {
+    const eventDate = new Date(event.dateValue);
+    eventDate.setHours(0, 0, 0, 0);
+    return eventDate.getTime() === today.getTime();
+  });
+  
+  // Find the next event that should be shown
+  // Rule: Show the next upcoming event starting 1 day before the current event's date
+  // If there's an event today, show the next event (it should have started showing yesterday)
+  // On the day that's 1 day before an event, switch to showing the event after that one
+  const nextEvent = allEvents
+    .filter(event => {
+      const eventDate = new Date(event.dateValue);
+      eventDate.setHours(0, 0, 0, 0);
+      
+      // If there's an event today, show the next event (eventDate > today)
+      if (hasEventToday) {
+        return eventDate > today;
+      }
+      
+      // Check if today is exactly 1 day before any event, and get that event's date
+      let eventOneDayBefore: Date | null = null;
+      for (const e of allEvents) {
+        const eDate = new Date(e.dateValue);
+        eDate.setHours(0, 0, 0, 0);
+        const oneDayBefore = new Date(eDate);
+        oneDayBefore.setDate(oneDayBefore.getDate() - 1);
+        if (oneDayBefore.getTime() === today.getTime()) {
+          eventOneDayBefore = eDate;
+          break;
+        }
+      }
+      
+      // If today is 1 day before an event, show events after that event (not the event itself)
+      if (eventOneDayBefore) {
+        return eventDate > eventOneDayBefore;
+      }
+      
+      // Otherwise, show event starting 1 day before its date
+      const showDate = new Date(eventDate);
+      showDate.setDate(showDate.getDate() - 1);
+      // Show if today is >= the show date (1 day before event) and event hasn't passed
+      return showDate <= today && eventDate >= today;
+    })
+    .sort((a, b) => a.dateValue.getTime() - b.dateValue.getTime())[0];
 
-  if (!secondEvent) {
+  if (!nextEvent) {
     return (
       <>
         <Header />
@@ -72,25 +118,25 @@ export default function UpcomingPage() {
               {/* Event Color Block */}
               <div
                 className="lg:w-64 p-12 flex items-center justify-center text-white"
-                style={{ backgroundColor: secondEvent.accent }}
+                style={{ backgroundColor: nextEvent.accent }}
               >
                 <div className="text-center">
-                  {secondEvent.isTBC ? (
+                  {nextEvent.isTBC ? (
                     <>
                       <div className="text-4xl font-bold mb-2">
                         TBC
                       </div>
                       <div className="text-xl opacity-90">
-                        {secondEvent.dateValue.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                        {nextEvent.dateValue.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="text-6xl font-bold mb-2">
-                        {secondEvent.dateValue.getDate()}
+                        {nextEvent.dateValue.getDate()}
                       </div>
                       <div className="text-xl opacity-90">
-                        {secondEvent.dateValue.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                        {nextEvent.dateValue.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                       </div>
                     </>
                   )}
@@ -102,14 +148,14 @@ export default function UpcomingPage() {
                 <div className="space-y-8">
                   <div className="space-y-4">
                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--c-cloud)] text-xs eyebrow">
-                      {secondEvent.type}
+                      {nextEvent.type}
                     </div>
                     <h2 className="text-4xl font-bold text-[var(--c-ink)]">
-                      {secondEvent.title}
+                      {nextEvent.title}
                     </h2>
-                    {secondEvent.registrationUrl && (
+                    {nextEvent.registrationUrl && (
                       <Link
-                        href={secondEvent.registrationUrl}
+                        href={nextEvent.registrationUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-pill)] bg-[var(--c-neon)] text-[var(--c-ink)] text-lg eyebrow hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1 transition-all"
@@ -120,26 +166,26 @@ export default function UpcomingPage() {
                   </div>
 
                   <p className="text-lg text-[var(--c-steel)] leading-relaxed">
-                    {secondEvent.description}
+                    {nextEvent.description}
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 border-t border-[var(--c-cloud)]">
                     <div className="space-y-2">
                       <div className="eyebrow text-[var(--c-mid-grey)]">Date</div>
-                      <div className="text-base font-medium text-[var(--c-ink)]">{secondEvent.date}</div>
+                      <div className="text-base font-medium text-[var(--c-ink)]">{nextEvent.date}</div>
                     </div>
                     <div className="space-y-2">
                       <div className="eyebrow text-[var(--c-mid-grey)]">Time</div>
-                      <div className="text-base font-medium text-[var(--c-ink)]">{secondEvent.time}</div>
+                      <div className="text-base font-medium text-[var(--c-ink)]">{nextEvent.time}</div>
                     </div>
                     <div className="space-y-2">
                       <div className="eyebrow text-[var(--c-mid-grey)]">Location</div>
-                      <div className="text-base font-medium text-[var(--c-ink)]">{secondEvent.location}</div>
+                      <div className="text-base font-medium text-[var(--c-ink)]">{nextEvent.location}</div>
                     </div>
-                    {secondEvent.ceCredits && (
+                    {nextEvent.ceCredits && (
                       <div className="space-y-2">
                         <div className="eyebrow text-[var(--c-mid-grey)]">Credits</div>
-                        <div className="text-base font-medium text-[var(--c-ink)]">{secondEvent.ceCredits}</div>
+                        <div className="text-base font-medium text-[var(--c-ink)]">{nextEvent.ceCredits}</div>
                       </div>
                     )}
                   </div>
