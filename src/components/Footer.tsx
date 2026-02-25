@@ -39,7 +39,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="eyebrow text-[var(--c-neon)]">Connect</div>
             <div className="text-sm space-y-2">
-              <p>Email: info@thebcds.com</p>
+              <p>Email: hello@brantcountydentalsociety.com</p>
               <p>Brantford, Ontario</p>
             </div>
           </div>
