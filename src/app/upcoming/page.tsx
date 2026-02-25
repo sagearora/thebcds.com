@@ -15,11 +15,14 @@ export default function UpcomingPage() {
     return eventDate.getTime() === today.getTime();
   });
   
+  // Events sorted by date for computing "previous event"
+  const sortedByDate = [...allEvents].sort((a, b) => a.dateValue.getTime() - b.dateValue.getTime());
+
   // Find the next event that should be shown
   // Rule: Show the next upcoming event starting 1 day before the current event's date
   // If there's an event today, show the next event (it should have started showing yesterday)
   // On the day that's 1 day before an event, switch to showing the event after that one
-  const nextEvent = allEvents
+  const nextEvent = sortedByDate
     .filter(event => {
       const eventDate = new Date(event.dateValue);
       eventDate.setHours(0, 0, 0, 0);
@@ -47,13 +50,20 @@ export default function UpcomingPage() {
         return eventDate > eventOneDayBefore;
       }
       
-      // Otherwise, show event starting 1 day before its date
-      const showDate = new Date(eventDate);
-      showDate.setDate(showDate.getDate() - 1);
-      // Show if today is >= the show date (1 day before event) and event hasn't passed
-      return showDate <= today && eventDate >= today;
-    })
-    .sort((a, b) => a.dateValue.getTime() - b.dateValue.getTime())[0];
+      // Otherwise, show event starting 1 day before the *previous* event's date
+      const eventIndex = sortedByDate.findIndex(e => e.id === event.id);
+      const prevEvent = eventIndex > 0 ? sortedByDate[eventIndex - 1] : null;
+      let showFrom: Date;
+      if (prevEvent) {
+        showFrom = new Date(prevEvent.dateValue);
+        showFrom.setHours(0, 0, 0, 0);
+        showFrom.setDate(showFrom.getDate() - 1);
+      } else {
+        showFrom = new Date(0); // Epoch - always in the past
+      }
+      // Show if today is >= showFrom and event hasn't passed
+      return showFrom <= today && eventDate >= today;
+    })[0];
 
   if (!nextEvent) {
     return (
