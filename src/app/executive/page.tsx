@@ -9,7 +9,7 @@ export default function ExecutivePage() {
     {
       name: 'Dr. Jon Mahn',
       role: 'President',
-      email: 'president@thebcds.com',
+      email: 'president@brantcountydentalsociety.com',
       image: '/images/executive/jon-manh.jpg',
       borderColor: 'var(--c-royal-purple)',
     },
@@ -23,7 +23,7 @@ export default function ExecutivePage() {
     {
       name: 'Dr. George Chan',
       role: 'Treasurer',
-      email: 'treasurer@thebcds.com',
+      email: 'treasurer@brantcountydentalsociety.com',
       image: null,
       borderColor: '#8FB800',
     },
@@ -37,7 +37,7 @@ export default function ExecutivePage() {
     {
       name: 'Dr. Jennifer Gurney-Ozog',
       role: 'ODA Representative to General Council',
-      email: 'odarep@thebcds.com',
+      email: 'odarep@brantcountydentalsociety.com',
       image: '/images/executive/jennifer-gurney.jpg',
       borderColor: 'var(--c-electric-pink)',
     },
@@ -51,7 +51,7 @@ export default function ExecutivePage() {
     {
       name: 'Dr. Saj Arora',
       role: 'Tech + Buzz Creator',
-      email: 'saj@aroradental.com',
+      email: 'media@brantcountydentalsociety.com',
       image: '/images/executive/saj-arora.jpg',
       borderColor: 'var(--c-royal-purple)',
     },
