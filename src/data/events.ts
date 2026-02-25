@@ -84,6 +84,7 @@ export const allEvents: Event[] = [
     description: 'Category 1 — 3 CE points. Join Dr. Peter Hong for an insightful presentation on Professional Liability Protection and adapting to changing times.',
     ceCredits: '3 CE Credits (Category 1)',
     accent: '#8FB800',
+    registrationUrl: 'https://forms.gle/6d7CUtMENrTMSDaK9'
   },
   {
     id: 7,
