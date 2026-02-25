@@ -137,16 +137,16 @@ export default function UpcomingPage() {
                         TBC
                       </div>
                       <div className="text-xl opacity-90">
-                        {nextEvent.dateValue.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                        {nextEvent.dateValue.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="text-6xl font-bold mb-2">
-                        {nextEvent.dateValue.getDate()}
+                        {nextEvent.dateValue.getUTCDate()}
                       </div>
                       <div className="text-xl opacity-90">
-                        {nextEvent.dateValue.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                        {nextEvent.dateValue.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}
                       </div>
                     </>
                   )}
