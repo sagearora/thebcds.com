@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { allEvents } from '@/data/events';
 
 export default function EventsPage() {
@@ -91,16 +92,50 @@ export default function EventsPage() {
                         <h3 className="text-3xl font-bold text-[var(--c-ink)]">
                           {event.title}
                         </h3>
-                        {event.registrationUrl && (
-                          <Link
-                            href={event.registrationUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] bg-[var(--c-neon)] text-[var(--c-ink)] eyebrow hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1 transition-all"
-                          >
-                            Register Now
-                          </Link>
+
+                        {event.slug === 'plp-changing-times' && event.primarySpeakerImage && event.primarySpeakerName && (
+                          <div className="flex items-center gap-4 pt-2">
+                            <div className="relative h-14 w-14 rounded-full overflow-hidden shadow-[var(--shadow-card)]">
+                              <Image
+                                src={event.primarySpeakerImage}
+                                alt={event.primarySpeakerName}
+                                fill
+                                sizes="56px"
+                                className="object-cover"
+                              />
+                            </div>
+                            <div className="space-y-1">
+                              <div className="eyebrow text-[var(--c-mid-grey)]">
+                                Featuring
+                              </div>
+                              <div className="text-sm font-medium text-[var(--c-ink)]">
+                                {event.primarySpeakerName}
+                              </div>
+                            </div>
+                          </div>
                         )}
+
+                        <div className="flex flex-wrap items-center gap-3 pt-2">
+                          {event.registrationUrl && (
+                            <Link
+                              href={event.registrationUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] bg-[var(--c-neon)] text-[var(--c-ink)] eyebrow hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1 transition-all"
+                            >
+                              Register Now
+                            </Link>
+                          )}
+
+                          {event.slug === 'plp-changing-times' && (
+                            <Link
+                              href="/events/plp-changing-times"
+                              className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] border border-[var(--c-ink)] text-[var(--c-ink)] text-xs uppercase tracking-[0.16em] hover:bg-[var(--c-ink)] hover:text-[var(--c-paper)] transition-all"
+                            >
+                              Learn more
+                            </Link>
+                          )}
+                        </div>
                       </div>
 
                       <p className="text-base text-[var(--c-steel)] leading-relaxed">
