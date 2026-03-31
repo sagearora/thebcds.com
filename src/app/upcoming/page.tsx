@@ -187,6 +187,24 @@ export default function UpcomingPage() {
                         </div>
                       )}
 
+                    {nextEvent.venueImage && (
+                      <div className="flex items-center gap-4 pt-2">
+                        <div className="relative h-16 w-28 shrink-0 rounded-[var(--radius-card)] overflow-hidden shadow-[var(--shadow-card)]">
+                          <Image
+                            src={nextEvent.venueImage}
+                            alt={nextEvent.location}
+                            fill
+                            sizes="112px"
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <div className="eyebrow text-[var(--c-mid-grey)]">Venue</div>
+                          <div className="text-sm font-medium text-[var(--c-ink)]">{nextEvent.location}</div>
+                        </div>
+                      </div>
+                    )}
+
                     <div className="flex flex-wrap items-center gap-3 pt-2">
                       {nextEvent.registrationUrl && (
                         <Link

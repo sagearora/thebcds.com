@@ -14,6 +14,8 @@ export interface Event {
   slug?: string;
   primarySpeakerName?: string;
   primarySpeakerImage?: string;
+  /** Optional venue photo (e.g. exterior) shown on event cards */
+  venueImage?: string;
 }
 
 export const allEvents: Event[] = [
@@ -106,14 +108,17 @@ export const allEvents: Event[] = [
   },
   {
     id: 8,
-    title: 'Essential Practice Pearls & BCDS Elections Night',
+    title: 'Essential Practice Pearls — Social Evening',
     date: 'May 26, 2026',
     dateValue: new Date('2026-05-26'),
     time: '6:30 PM',
-    location: 'The Olde School Restaurant',
-    type: 'Annual Meeting',
-    description: 'Essential practice pearls for your dental practice, followed by BCDS elections. Don\'t miss this important annual event.',
+    location: 'The Rope Factory',
+    type: 'Networking',
+    description:
+      'Join colleagues for an evening that blends connection with learning. Move around, chat, and hear bite-sized practical pearls from specialists in a relaxed, informal setting — less podium, more conversation. Bring your questions, swap ideas with peers, and leave with takeaways you can use in practice the next day, all with a friendly social vibe.',
     accent: 'var(--c-electric-pink)',
+    registrationUrl: 'https://forms.gle/prSwRSGBCrTqQCX76',
+    venueImage: '/images/events/the-rope-factory.webp',
   },
 ];
 

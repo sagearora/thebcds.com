@@ -115,6 +115,24 @@ export default function EventsPage() {
                           </div>
                         )}
 
+                        {event.venueImage && (
+                          <div className="flex items-center gap-4 pt-2">
+                            <div className="relative h-16 w-28 shrink-0 rounded-[var(--radius-card)] overflow-hidden shadow-[var(--shadow-card)]">
+                              <Image
+                                src={event.venueImage}
+                                alt={event.location}
+                                fill
+                                sizes="112px"
+                                className="object-cover"
+                              />
+                            </div>
+                            <div className="space-y-1">
+                              <div className="eyebrow text-[var(--c-mid-grey)]">Venue</div>
+                              <div className="text-sm font-medium text-[var(--c-ink)]">{event.location}</div>
+                            </div>
+                          </div>
+                        )}
+
                         <div className="flex flex-wrap items-center gap-3 pt-2">
                           {event.registrationUrl && (
                             <Link
