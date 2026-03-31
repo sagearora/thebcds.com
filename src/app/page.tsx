@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import CommunityScholarshipSection from '@/components/CommunityScholarshipSection';
 import HeroSection from '@/components/HeroSection';
 import KPISection from '@/components/KPISection';
 import MissionSection from '@/components/MissionSection';
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Header />
+      <CommunityScholarshipSection />
       <HeroSection />
       <KPISection />
       <MissionSection />
