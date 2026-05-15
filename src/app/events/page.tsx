@@ -52,12 +52,14 @@ export default function EventsPage() {
             and exclusive member benefits.
           </p>
           <div className="flex flex-wrap gap-6 justify-center pt-8">
-            <button
-              type="button"
+            <Link
+              href="https://brantcountydentalsociety.beehiiv.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 py-5 rounded-[var(--radius-pill)] bg-[var(--c-neon)] text-[var(--c-ink)] text-lg eyebrow hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1 transition-all"
             >
               Subscribe Now
-            </button>
+            </Link>
             <Link
               href="/"
               className="inline-flex items-center justify-center px-10 py-5 rounded-[var(--radius-pill)] border-2 border-[var(--c-paper)] text-[var(--c-paper)] text-lg eyebrow hover:bg-[var(--c-paper)] hover:text-[var(--c-ink)] transition-all"
