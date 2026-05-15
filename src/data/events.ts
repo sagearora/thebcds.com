@@ -9,6 +9,7 @@ export interface Event {
   description: string;
   accent: string;
   registrationUrl?: string;
+  learnMoreUrl?: string;
   ceCredits?: string;
   isTBC?: boolean;
   slug?: string;
@@ -108,17 +109,32 @@ export const allEvents: Event[] = [
   },
   {
     id: 8,
-    title: 'Essential Practice Pearls — Social Evening',
+    title: 'Dentists Unplugged:Essential Practice Pearls/Social Evening',
     date: 'May 26, 2026',
     dateValue: new Date('2026-05-26'),
     time: '6:30 PM',
     location: 'The Rope Factory',
     type: 'Networking',
     description:
-      'Join colleagues for an evening that blends connection with learning. Move around, chat, and hear bite-sized practical pearls from specialists in a relaxed, informal setting — less podium, more conversation. Bring your questions, swap ideas with peers, and leave with takeaways you can use in practice the next day, all with a friendly social vibe.',
+      'Come for a fun social night with games, great food, drinks, and real conversations with colleagues. This is an improvised Q&A-style evening with practical pearls from four specialists: Dr. Sheikh (Oral Surgery), Dr. Calzonetti (Endo), Dr. Phuong (Ortho), and Dr. Nemeth (Perio). Bring your questions, jump into the discussion, and head home with ideas you can use in practice the very next day.',
     accent: 'var(--c-electric-pink)',
     registrationUrl: 'https://forms.gle/prSwRSGBCrTqQCX76',
+    learnMoreUrl: '/images/events/May%2026th%20-%20Dentists%20Unplugged.pdf',
     venueImage: '/images/events/the-rope-factory.webp',
+  },
+  {
+    id: 9,
+    title: 'Wine Mixer at Pillitteri Estates',
+    date: 'Saturday, June 6, 2026',
+    dateValue: new Date('2026-06-06'),
+    time: '5:30 PM',
+    location: 'Pillitteri Estates Winery',
+    type: 'Social Event',
+    description:
+      'Join us for a wine mixer at Pillitteri Estates. 5:30 PM wine tour and tasting (complimentary), followed by a 6:30 PM buffet dinner. Partners are welcome to join. Cost is $50 per person. Limited spots available.',
+    accent: 'var(--c-royal-purple)',
+    registrationUrl: 'https://forms.gle/59jbFVs4a2yWeDzN9',
+    venueImage: '/images/events/pillitteriestateswinery-niagaraonthelake.png',
   },
 ];
 
