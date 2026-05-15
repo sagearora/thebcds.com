@@ -142,6 +142,7 @@ export const allEvents: Event[] = [
     accent: 'var(--c-royal-purple)',
     slug: 'winery',
     registrationUrl: 'https://forms.gle/59jbFVs4a2yWeDzN9',
+    learnMoreUrl: '/plp/no_plaque_more_pinot_june_6.pdf',
     venueImage: '/images/events/pillitteriestateswinery-niagaraonthelake.png',
   },
 ];
