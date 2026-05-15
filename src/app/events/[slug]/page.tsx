@@ -97,6 +97,22 @@ export default async function EventDetailPage({ params }: EventPageProps) {
               )}
             </div>
 
+            {event.detailBullets && event.detailBullets.length > 0 && (
+              <div className="rounded-[var(--radius-card)] border border-[var(--c-cloud)] bg-[var(--c-paper)] p-6 md:p-7 space-y-4">
+                <div className="eyebrow text-[var(--c-royal-purple)]">Event details</div>
+                <ul className="space-y-2 text-sm md:text-base text-[var(--c-steel)]">
+                  {event.detailBullets.map((detail) => (
+                    <li key={detail} className="flex gap-2 leading-relaxed">
+                      <span className="text-[var(--c-royal-purple)]" aria-hidden>
+                        •
+                      </span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {(event.venueImage || event.primarySpeakerImage) && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                 {event.venueImage && (

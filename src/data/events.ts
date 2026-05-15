@@ -17,6 +17,8 @@ export interface Event {
   primarySpeakerImage?: string;
   /** Optional venue photo (e.g. exterior) shown on event cards */
   venueImage?: string;
+  /** Optional detailed points shown in the event details panel */
+  detailBullets?: string[];
 }
 
 export const allEvents: Event[] = [
@@ -134,16 +136,24 @@ export const allEvents: Event[] = [
     title: 'Wine Mixer at Pillitteri Estates',
     date: 'Saturday, June 6, 2026',
     dateValue: new Date('2026-06-06'),
-    time: '5:30 PM',
+    time: '5:30 PM wine tour, 7:00 PM dinner and drinks',
     location: 'Pillitteri Estates Winery',
     type: 'Social Event',
     description:
-      'Join us for a wine mixer at Pillitteri Estates. 5:30 PM wine tour and tasting (complimentary), followed by a 6:30 PM buffet dinner. Partners are welcome to join. Cost is $50 per person. Limited spots available.',
+      'Join us at Pillitteri Estates for a social evening of wine, dinner, and connection with colleagues and guests.',
     accent: 'var(--c-royal-purple)',
     slug: 'winery',
     registrationUrl: 'https://forms.gle/59jbFVs4a2yWeDzN9',
     learnMoreUrl: '/plp/no_plaque_more_pinot_june_6.pdf',
     venueImage: '/images/events/pillitteriestateswinery-niagaraonthelake.png',
+    detailBullets: [
+      '5:30 PM guided wine tour and complimentary tasting',
+      '7:00 PM dinner and drinks in the Barrel Head Private Room',
+      'Partners are welcome to attend',
+      'Ticket value is approximately $120, offered at $50 per person',
+      'Capacity is limited to about 50-60 guests',
+      'Sponsored by Nobel',
+    ],
   },
 ];
 
