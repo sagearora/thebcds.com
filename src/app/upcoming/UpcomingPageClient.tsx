@@ -183,6 +183,15 @@ export default function UpcomingPageClient() {
                         </Link>
                       )}
 
+                      {nextEvent.slug && (
+                        <Link
+                          href={`/e/${nextEvent.slug}`}
+                          className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] border border-[var(--c-ink)] text-[var(--c-ink)] text-xs uppercase tracking-[0.16em] hover:bg-[var(--c-ink)] hover:text-[var(--c-paper)] transition-all"
+                        >
+                          Learn more
+                        </Link>
+                      )}
+
                       {nextEvent.learnMoreUrl && (
                         <Link
                           href={nextEvent.learnMoreUrl}
@@ -190,16 +199,7 @@ export default function UpcomingPageClient() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] border border-[var(--c-ink)] text-[var(--c-ink)] text-xs uppercase tracking-[0.16em] hover:bg-[var(--c-ink)] hover:text-[var(--c-paper)] transition-all"
                         >
-                          Learn more
-                        </Link>
-                      )}
-
-                      {nextEvent.slug === 'plp-changing-times' && (
-                        <Link
-                          href="/events/plp-changing-times"
-                          className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] border border-[var(--c-ink)] text-[var(--c-ink)] text-xs uppercase tracking-[0.16em] hover:bg-[var(--c-ink)] hover:text-[var(--c-paper)] transition-all"
-                        >
-                          Learn more
+                          View flyer
                         </Link>
                       )}
                     </div>
