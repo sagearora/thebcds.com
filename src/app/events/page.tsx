@@ -21,7 +21,7 @@ export default function EventsPage() {
 
         <div className="relative z-10 container pb-20 pt-32 w-full">
           <div className="space-y-6">
-            <div className="eyebrow text-[var(--c-neon)]">BCDS Events</div>
+            <div className="eyebrow text-[var(--c-neon)]">BCDS Events · 2026–2027</div>
             <h1 className="display-hero text-[clamp(3rem,9vw,7rem)] text-[var(--c-paper)] leading-[0.9]">
               LEARN.
               <br />
@@ -30,8 +30,8 @@ export default function EventsPage() {
               <span className="text-[var(--c-neon)]">GROW.</span>
             </h1>
             <p className="text-lg md:text-xl text-[var(--c-cloud)] max-w-2xl leading-relaxed">
-              Join us for world-class continuing education, networking opportunities, and professional
-              development events throughout the year.
+              Connect, learn, and grow with seven meetings, 14 CE points, and seven dinners included
+              in our 2026–2027 membership and event calendar.
             </p>
           </div>
         </div>

@@ -57,7 +57,7 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="https://ontariodentalassociation.formstack.com/forms/bcds_membership_2025_2026"
+                href="https://ontariodentalassociation.formstack.com/forms/bcds_membership_2026_2027"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] bg-[var(--c-neon)] text-[var(--c-ink)] eyebrow hover:shadow-[var(--shadow-elevated)] hover:-translate-y-0.5 transition-all"
@@ -112,7 +112,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="https://ontariodentalassociation.formstack.com/forms/bcds_membership_2025_2026"
+            href="https://ontariodentalassociation.formstack.com/forms/bcds_membership_2026_2027"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-pill)] bg-[var(--c-neon)] text-[var(--c-ink)] eyebrow hover:shadow-[var(--shadow-elevated)] transition-all mt-4"

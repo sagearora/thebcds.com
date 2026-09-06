@@ -241,25 +241,30 @@ export default function EventsListsClient() {
         className={`py-24 ${pastEvents.length > 0 ? 'bg-[var(--c-paper)]' : 'bg-[var(--c-cloud)]'}`}
       >
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             <div className="space-y-4">
               <div className="display-section text-[clamp(3rem,7vw,5rem)] text-[var(--c-royal-purple)]">
-                {upcomingEvents.length}
+                7
               </div>
-              <div className="eyebrow text-[var(--c-mid-grey)]">UPCOMING EVENTS</div>
-              <p className="text-sm text-[var(--c-steel)]">Scheduled for 2025-2026</p>
+              <div className="eyebrow text-[var(--c-mid-grey)]">MEETINGS</div>
+              <p className="text-sm text-[var(--c-steel)]">Scheduled for 2026–2027</p>
             </div>
             <div className="space-y-4">
-              <div className="display-section text-[clamp(3rem,7vw,5rem)] text-[var(--c-electric-pink)]">8</div>
-              <div className="eyebrow text-[var(--c-mid-grey)]">EVENTS YEARLY</div>
-              <p className="text-sm text-[var(--c-steel)]">Educational sessions and networking</p>
+              <div className="display-section text-[clamp(3rem,7vw,5rem)] text-[var(--c-electric-pink)]">14</div>
+              <div className="eyebrow text-[var(--c-mid-grey)]">CE POINTS</div>
+              <p className="text-sm text-[var(--c-steel)]">Across the season</p>
             </div>
             <div className="space-y-4">
               <div className="display-section text-[clamp(3rem,7vw,5rem)]" style={{ color: '#8FB800' }}>
-                3+
+                3
               </div>
-              <div className="eyebrow text-[var(--c-mid-grey)]">CE CREDITS</div>
-              <p className="text-sm text-[var(--c-steel)]">Available per event</p>
+              <div className="eyebrow text-[var(--c-mid-grey)]">CORE 1 CE POINTS</div>
+              <p className="text-sm text-[var(--c-steel)]">March 30 PLP session</p>
+            </div>
+            <div className="space-y-4">
+              <div className="display-section text-[clamp(3rem,7vw,5rem)] text-[var(--c-royal-purple)]">7</div>
+              <div className="eyebrow text-[var(--c-mid-grey)]">DINNERS INCLUDED</div>
+              <p className="text-sm text-[var(--c-steel)]">Connect with colleagues</p>
             </div>
           </div>
         </div>

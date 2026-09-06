@@ -21,13 +21,6 @@ export default function ExecutivePage() {
       borderColor: 'var(--c-electric-pink)',
     },
     {
-      name: 'Dr. George Chan',
-      role: 'Treasurer',
-      email: 'treasurer@brantcountydentalsociety.com',
-      image: null,
-      borderColor: '#8FB800',
-    },
-    {
       name: 'Dr. Nader Jahshan',
       role: 'Secretary',
       email: 'secretary@thebcds.com',
@@ -197,4 +190,3 @@ export default function ExecutivePage() {
     </>
   );
 }
-

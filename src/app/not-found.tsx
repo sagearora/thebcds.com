@@ -96,7 +96,7 @@ export default function NotFound() {
                         </span>
                       </Link>
                       <Link
-                        href="https://ontariodentalassociation.formstack.com/forms/bcds_membership_2025_2026"
+                        href="https://ontariodentalassociation.formstack.com/forms/bcds_membership_2026_2027"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center justify-between rounded-[var(--radius-soft)] bg-[var(--c-neon)] text-[var(--c-ink)] px-4 py-3 hover:shadow-[var(--shadow-elevated)] transition-all"
