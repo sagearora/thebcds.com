@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Anton } from "next/font/google";
 import "./globals.css";
+import { anniversary } from '@/data/anniversary';
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -17,7 +18,7 @@ const anton = Anton({
 
 export const metadata: Metadata = {
   title: "BCDS - Brant County Dental Society",
-  description: "Uniting thought leaders at the frontier of dentistry. Growing and fostering a strong dental community across Ontario.",
+  description: `Celebrating ${anniversary.years} years of the Brant County Dental Society (${anniversary.founded}–${anniversary.year}). Connecting dental professionals and advancing dentistry across Ontario.`,
   keywords: ["dental", "dentistry", "ontario", "community", "professional development"],
 };
 

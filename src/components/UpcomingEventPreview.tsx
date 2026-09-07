@@ -1,138 +1,127 @@
-'use client';
+"use client";
 
-import { useEffect, useMemo, useState } from 'react';
-import Link from 'next/link';
-import { allEvents } from '@/data/events';
-import { getNextFeaturedEvent } from '@/lib/eventDates';
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { allEvents } from "@/data/events";
+import { getNextFeaturedEvent } from "@/lib/eventDates";
 
 export default function UpcomingEventPreview() {
   const [now, setNow] = useState<Date | null>(null);
-
   useEffect(() => {
-    setNow(new Date());
+    const frame = requestAnimationFrame(() => setNow(new Date()));
+    const timer = setInterval(() => setNow(new Date()), 60_000);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearInterval(timer);
+    };
   }, []);
-
   const nextEvent = useMemo(
     () => (now ? getNextFeaturedEvent(allEvents, now) : null),
     [now],
   );
 
-  if (!now || !nextEvent) {
-    return null;
-  }
-
   return (
-    <section className="py-24 bg-[var(--c-cloud)]">
-      <div className="container">
-        <div className="mb-12">
-          <div className="eyebrow text-[var(--c-electric-pink)] mb-4">Next Event</div>
-          <h2 className="display-section text-[clamp(2rem,6vw,4rem)] text-[var(--c-ink)]">
-            JOIN US NEXT
-          </h2>
+    <section className="home-events" id="next-event">
+      <div className="home-shell">
+        <div className="home-section-heading home-reveal">
+          <div>
+            <p className="home-label">02 / The next connection</p>
+            <h2>
+              Make room for
+              <br />
+              <em>something good.</em>
+            </h2>
+          </div>
+          <Link href="/events" className="home-text-link">
+            Explore all events <span aria-hidden="true">↗</span>
+          </Link>
         </div>
-
-        <div className="bg-white rounded-[var(--radius-card)] shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-all overflow-hidden">
-          <div className="flex flex-col lg:flex-row">
-            <div
-              className="lg:w-48 p-12 flex items-center justify-center text-white"
-              style={{ backgroundColor: nextEvent.accent }}
-            >
-              <div className="text-center">
-                {nextEvent.isTBC ? (
-                  <>
-                    <div className="text-2xl font-bold mb-2">TBC</div>
-                    <div className="text-lg opacity-90">
-                      {nextEvent.dateValue.toLocaleDateString('en-US', {
-                        month: 'long',
-                        year: 'numeric',
-                      })}
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="text-4xl font-bold mb-2">{nextEvent.dateValue.getDate()}</div>
-                    <div className="text-lg opacity-90">
-                      {nextEvent.dateValue.toLocaleDateString('en-US', {
-                        month: 'short',
-                        year: 'numeric',
-                      })}
-                    </div>
-                  </>
+        {!now ? (
+          <p className="home-event-empty" role="status">
+            Finding your next opportunity to connect…
+          </p>
+        ) : nextEvent ? (
+          <article className="home-event-card">
+            <div className="home-event-date">
+              <span className="home-label">Save the date</span>
+              <strong>
+                {nextEvent.isTBC ? "TBC" : nextEvent.dateValue.getDate()}
+              </strong>
+              <span>
+                {nextEvent.dateValue.toLocaleDateString("en-US", {
+                  month: "long",
+                  year: "numeric",
+                })}
+              </span>
+              <div className="home-event-date-art" aria-hidden="true">
+                ✦
+              </div>
+              <small>Learn. Connect. Be inspired.</small>
+            </div>
+            <div className="home-event-content">
+              <span className="home-event-type">{nextEvent.type}</span>
+              <h3>{nextEvent.title}</h3>
+              <p>{nextEvent.description}</p>
+              <dl className="home-event-details">
+                <div>
+                  <dt>Time</dt>
+                  <dd>{nextEvent.time}</dd>
+                </div>
+                <div>
+                  <dt>Location</dt>
+                  <dd>{nextEvent.location}</dd>
+                </div>
+                {nextEvent.ceCredits && (
+                  <div>
+                    <dt>CE credits</dt>
+                    <dd>{nextEvent.ceCredits}</dd>
+                  </div>
+                )}
+              </dl>
+              <div className="home-actions">
+                {nextEvent.registrationUrl && (
+                  <Link
+                    href={nextEvent.registrationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home-button"
+                  >
+                    Reserve your place <span aria-hidden="true">↗</span>
+                  </Link>
+                )}
+                {nextEvent.slug && (
+                  <Link
+                    href={`/e/${nextEvent.slug}`}
+                    className="home-text-link"
+                  >
+                    Event details <span aria-hidden="true">↗</span>
+                  </Link>
+                )}
+                {nextEvent.learnMoreUrl && (
+                  <Link
+                    href={nextEvent.learnMoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home-text-link"
+                  >
+                    View flyer <span aria-hidden="true">↗</span>
+                  </Link>
                 )}
               </div>
             </div>
-
-            <div className="flex-1 p-8 lg:p-12">
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--c-cloud)] text-xs eyebrow">
-                    {nextEvent.type}
-                  </div>
-                  <h3 className="text-3xl font-bold text-[var(--c-ink)]">{nextEvent.title}</h3>
-                  {nextEvent.registrationUrl && (
-                    <Link
-                      href={nextEvent.registrationUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] bg-[var(--c-neon)] text-[var(--c-ink)] eyebrow hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1 transition-all"
-                    >
-                      Register Now
-                    </Link>
-                  )}
-                  {nextEvent.slug && (
-                    <Link
-                      href={`/e/${nextEvent.slug}`}
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] border border-[var(--c-ink)] text-[var(--c-ink)] text-xs uppercase tracking-[0.16em] hover:bg-[var(--c-ink)] hover:text-[var(--c-paper)] transition-all"
-                    >
-                      Learn more
-                    </Link>
-                  )}
-                  {nextEvent.learnMoreUrl && (
-                    <Link
-                      href={nextEvent.learnMoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-pill)] border border-[var(--c-ink)] text-[var(--c-ink)] text-xs uppercase tracking-[0.16em] hover:bg-[var(--c-ink)] hover:text-[var(--c-paper)] transition-all"
-                    >
-                      View flyer
-                    </Link>
-                  )}
-                </div>
-
-                <p className="text-base text-[var(--c-steel)] leading-relaxed">{nextEvent.description}</p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-                  <div className="space-y-1">
-                    <div className="eyebrow text-[var(--c-mid-grey)]">Time</div>
-                    <div className="text-sm font-medium text-[var(--c-ink)]">{nextEvent.time}</div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="eyebrow text-[var(--c-mid-grey)]">Location</div>
-                    <div className="text-sm font-medium text-[var(--c-ink)]">{nextEvent.location}</div>
-                  </div>
-                  {nextEvent.ceCredits && (
-                    <div className="space-y-1">
-                      <div className="eyebrow text-[var(--c-mid-grey)]">Credits</div>
-                      <div className="text-sm font-medium text-[var(--c-ink)]">{nextEvent.ceCredits}</div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="pt-4">
-                  <Link
-                    href="/events"
-                    className="inline-flex items-center gap-2 text-sm text-[var(--c-steel)] hover:text-[var(--c-royal-purple)] transition-colors"
-                  >
-                    View all events
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
+          </article>
+        ) : (
+          <div className="home-event-empty">
+            <h3>More good things are on the way.</h3>
+            <p>
+              Explore our events and check back for the next opportunity to
+              connect.
+            </p>
+            <Link href="/events" className="home-text-link">
+              Browse events <span aria-hidden="true">↗</span>
+            </Link>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

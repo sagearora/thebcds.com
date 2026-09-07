@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { anniversary } from '@/data/anniversary';
 
 export default function Footer() {
   return (
@@ -18,6 +19,9 @@ export default function Footer() {
             </Link>
             <p className="text-sm mt-4">
               Growing community. Advancing dentistry.
+            </p>
+            <p className="text-sm text-[var(--c-neon)]">
+              Celebrating {anniversary.years} years · {anniversary.founded}–{anniversary.year}
             </p>
           </div>
 
@@ -53,4 +57,3 @@ export default function Footer() {
     </footer>
   );
 }
-
