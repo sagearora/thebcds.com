@@ -1,0 +1,242 @@
+[
+  {
+    "question": "Name something patients are afraid of at the dentist.",
+    "answers": [
+      "Needles",
+      "The drill",
+      "Pain"
+    ]
+  },
+  {
+    "question": "Name something a dentist tells patients to do more often.",
+    "answers": [
+      "Floss",
+      "Brush",
+      "Come in for checkups"
+    ]
+  },
+  {
+    "question": "Name something a patient complains about at the dentist.",
+    "answers": [
+      "Pain",
+      "The cost",
+      "Waiting"
+    ]
+  },
+  {
+    "question": "Name something you would find in every dental office.",
+    "answers": [
+      "Dental chair",
+      "Toothbrushes",
+      "X-ray machine"
+    ]
+  },
+  {
+    "question": "Name something a dentist says all day long.",
+    "answers": [
+      "Open wide",
+      "Bite down",
+      "You're almost done"
+    ]
+  },
+  {
+    "question": "Name something patients lie to their dentist about.",
+    "answers": [
+      "Flossing",
+      "Brushing",
+      "How long it has been hurting"
+    ]
+  },
+  {
+    "question": "Name something that could make a dentist run behind.",
+    "answers": [
+      "An emergency",
+      "A difficult procedure",
+      "A late patient"
+    ]
+  },
+  {
+    "question": "Name something a dentist uses to look inside your mouth.",
+    "answers": [
+      "Mirror",
+      "Light",
+      "X-rays"
+    ]
+  },
+  {
+    "question": "Name something a patient might forget before a dental appointment.",
+    "answers": [
+      "Their appointment",
+      "Insurance information",
+      "To brush their teeth"
+    ]
+  },
+  {
+    "question": "Name something patients do while sitting in the dental chair.",
+    "answers": [
+      "Talk",
+      "Look at their phone",
+      "Close their eyes"
+    ]
+  },
+  {
+    "question": "Name something a dentist is happy to see on the schedule.",
+    "answers": [
+      "An easy filling",
+      "A cancellation",
+      "A short day"
+    ]
+  },
+  {
+    "question": "Name something that can break in a dental office.",
+    "answers": [
+      "Dental chair",
+      "Suction",
+      "Computer"
+    ]
+  },
+  {
+    "question": "Name something a dentist might do between patients.",
+    "answers": [
+      "Write notes",
+      "Eat or drink",
+      "Check their phone"
+    ]
+  },
+  {
+    "question": "Name something patients ask after getting frozen.",
+    "answers": [
+      "How long will it last?",
+      "Can I eat?",
+      "Is this normal?"
+    ]
+  },
+  {
+    "question": "Name something you don't want to hear your dentist say.",
+    "answers": [
+      "Uh-oh",
+      "You need a root canal",
+      "This is going to be expensive"
+    ]
+  },
+  {
+    "question": "Name something a dentist might find during a checkup.",
+    "answers": [
+      "A cavity",
+      "Gum disease",
+      "A broken tooth"
+    ]
+  },
+  {
+    "question": "Name something people do to avoid going to the dentist.",
+    "answers": [
+      "Keep putting it off",
+      "Ignore the pain",
+      "Take painkillers"
+    ]
+  },
+  {
+    "question": "Name something a dentist wears at work.",
+    "answers": [
+      "Gloves",
+      "Mask",
+      "Scrubs"
+    ]
+  },
+  {
+    "question": "Name something that makes a dental patient nervous.",
+    "answers": [
+      "Needles",
+      "The drill sound",
+      "The cost"
+    ]
+  },
+  {
+    "question": "Name something a dental office can run out of.",
+    "answers": [
+      "Gloves",
+      "Anesthetic",
+      "Masks"
+    ]
+  },
+  {
+    "question": "Name something a dentist checks before starting treatment.",
+    "answers": [
+      "X-rays",
+      "The tooth",
+      "The patient's medical history"
+    ]
+  },
+  {
+    "question": "Name something a dentist might ask a patient.",
+    "answers": [
+      "Does anything hurt?",
+      "Do you floss?",
+      "Are you numb?"
+    ]
+  },
+  {
+    "question": "Name something a patient might do when the dentist says 'open wide.'",
+    "answers": [
+      "Open their mouth",
+      "Laugh",
+      "Try to talk"
+    ]
+  },
+  {
+    "question": "Name something dentists spend a lot of money on.",
+    "answers": [
+      "Equipment",
+      "Supplies",
+      "Staff"
+    ]
+  },
+  {
+    "question": "Name something you might hear in a dental office.",
+    "answers": [
+      "A drill",
+      "Suction",
+      "Someone saying 'open wide'"
+    ]
+  },
+  {
+    "question": "Name something patients want to know before treatment.",
+    "answers": [
+      "Will it hurt?",
+      "How much will it cost?",
+      "How long will it take?"
+    ]
+  },
+  {
+    "question": "Name something dentists wish patients would stop doing.",
+    "answers": [
+      "Skipping flossing",
+      "Arriving late",
+      "Missing appointments"
+    ]
+  },
+  {
+    "question": "Name something a patient might say when they sit in the dental chair.",
+    "answers": [
+      "I hate the dentist",
+      "I'm nervous",
+      "This won't hurt, right?"
+    ]
+  },
+  {
+    "question": "Name something a dentist does at the end of the day.",
+    "answers": [
+      "Finish notes",
+      "Check tomorrow's schedule",
+      "Go home"
+    ]
+  },
+  {
+    "question": "Name something that makes everyone in a dental office happy.",
+    "answers": [
+      "A cancellation",
+      "Lunch",
+      "Finishing early"
+    ]
+  }
+]
