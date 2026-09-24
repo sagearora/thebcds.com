@@ -14,35 +14,34 @@ export default function ExecutivePage() {
     {
       name: "Dr. Mike Veer",
       role: "Vice-President",
-      email: "vp@thebcds.com",
       image: "/images/executive/mike-veer.png",
       borderColor: "var(--c-electric-pink)",
     },
     {
       name: "Dr. Nader Jahshan",
       role: "Secretary",
-      email: "secretary@thebcds.com",
+      email: "secretary@brantcountydentalsociety.com",
       image: "/images/executive/nader.jpeg",
       borderColor: "var(--c-royal-purple)",
     },
     {
       name: "Dr. Jennifer Gurney-Ozog",
       role: "ODA Representative to General Council",
-      email: "odarep@brantcountydentalsociety.com",
+      email: "oda@brantcountydentalsociety.com",
       image: "/images/executive/jennifer-gurney.jpg",
       borderColor: "var(--c-electric-pink)",
     },
     {
       name: "Joe Schacher",
       role: "Outreach Coordinator",
-      email: "outreach@thebcds.com",
+      email: "memberships@brantcountydentalsociety.com",
       image: "/images/executive/joe-Schacher.jpg",
       borderColor: "#8FB800",
     },
     {
       name: "Dr. Saj Arora",
       role: "Tech + Buzz Creator",
-      email: "media@brantcountydentalsociety.com",
+      email: "communications@brantcountydentalsociety.com",
       image: "/images/executive/saj-arora.jpg",
       borderColor: "var(--c-royal-purple)",
     },
@@ -78,7 +77,7 @@ export default function ExecutivePage() {
         </div>
         <div className="site-team-grid">
           {executiveTeam.map((member) => (
-            <article key={member.email} className="site-person home-reveal">
+            <article key={member.name} className="site-person home-reveal">
               <div className="site-person-image">
                 <Image
                   src={member.image}
@@ -91,9 +90,11 @@ export default function ExecutivePage() {
               <div className="site-person-copy">
                 <p className="home-label">{member.role}</p>
                 <h3>{member.name}</h3>
-                <a href={`mailto:${member.email}`} className="home-text-link">
-                  {member.email} <span aria-hidden="true">↗</span>
-                </a>
+                {member.email && (
+                  <a href={`mailto:${member.email}`} className="home-text-link">
+                    {member.email} <span aria-hidden="true">↗</span>
+                  </a>
+                )}
               </div>
             </article>
           ))}
