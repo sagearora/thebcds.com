@@ -17,6 +17,7 @@ export default function FeudGame({ questions }: { questions: Question[] }) {
   const soundEnabled = useRef(true);
   const soundVersion = useRef(0);
   const item = questions[current];
+  const nextAnswer = item.answers.length - revealed.length - 1;
 
   const stopSound = useCallback(() => {
     soundVersion.current += 1;
@@ -75,11 +76,11 @@ export default function FeudGame({ questions }: { questions: Question[] }) {
   }, [stopSound]);
 
   const reveal = useCallback((index: number) => {
-    if (index < 0 || index >= item.answers.length || revealed.includes(index)) return;
+    if (index < 0 || index !== nextAnswer) return;
     setRevealed(previous => [...previous, index]);
     setFlash(previous => previous + 1);
     if (soundOn) playSound();
-  }, [item.answers.length, revealed, soundOn, playSound]);
+  }, [nextAnswer, soundOn, playSound]);
 
   const reset = useCallback(() => {
     setRevealed([]);
@@ -107,6 +108,7 @@ export default function FeudGame({ questions }: { questions: Question[] }) {
       if (target instanceof HTMLElement && (target.isContentEditable || target.closest("input, textarea, select"))) return;
       const key = event.key.toLowerCase();
       if (/^[1-9]$/.test(key)) reveal(Number(key) - 1);
+      else if (key === " ") reveal(nextAnswer);
       else if (key === "r") reset();
       else if (key === "arrowright") navigate(1);
       else if (key === "arrowleft") navigate(-1);
@@ -116,7 +118,7 @@ export default function FeudGame({ questions }: { questions: Question[] }) {
     };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [reveal, reset, navigate, toggleFullscreen]);
+  }, [reveal, nextAnswer, reset, navigate, toggleFullscreen]);
 
   return (
     <main className={styles.game}>
@@ -141,7 +143,7 @@ export default function FeudGame({ questions }: { questions: Question[] }) {
                 <button type="button" key={index}
                   className={`${styles.answer} ${visible ? styles.revealed : ""}`}
                   aria-label={visible ? `Answer ${index + 1}: ${answer}` : `Reveal answer ${index + 1}`}
-                  aria-pressed={visible} onClick={() => reveal(index)}>
+                  aria-pressed={visible} disabled={index !== nextAnswer} onClick={() => reveal(index)}>
                   <span className={`${styles.face} ${styles.front}`} aria-hidden="true">
                     <span className={styles.num}>{index + 1}</span>
                     <span className={styles.mystery}>••••••••••</span>
@@ -160,7 +162,13 @@ export default function FeudGame({ questions }: { questions: Question[] }) {
             <button className={styles.control} onClick={() => navigate(-1)}>← Previous</button>
             <button className={styles.control} onClick={reset}>Reset Board</button>
           </div>
-          <p className={styles.counter} aria-live="polite">Question {current + 1} of {questions.length}</p>
+          <div className={styles.counter} aria-live="polite">
+            <p>Question {current + 1} of {questions.length}</p>
+            <button className={`${styles.control} ${styles.primary} ${styles.revealNext}`}
+              disabled={nextAnswer < 0} onClick={() => reveal(nextAnswer)}>
+              {nextAnswer < 0 ? "All Answers Revealed" : `Reveal Next Answer (${nextAnswer + 1})`}
+            </button>
+          </div>
           <div className={`${styles.btns} ${styles.right}`}>
             <button className={styles.control} onClick={() => void toggleFullscreen()}>Fullscreen</button>
             <button className={styles.control} aria-pressed={soundOn} onClick={() => {
@@ -171,7 +179,7 @@ export default function FeudGame({ questions }: { questions: Question[] }) {
             <button className={`${styles.control} ${styles.primary}`} onClick={() => navigate(1)}>Next Question →</button>
           </div>
         </section>
-        <p className={styles.hint}>Keys: {item.answers.slice(0, 9).map((_, index) => index + 1).join(" / ")} reveal • R reset • ← / → change question • F fullscreen</p>
+        <p className={styles.hint}>Space reveals next answer (bottom to top) • R reset • ← / → change question • F fullscreen</p>
       </div>
       <div key={flash} className={`${styles.flash} ${flash ? styles.go : ""}`} aria-hidden="true" />
       <audio ref={ding} preload="auto" src="https://www.myinstants.com/media/sounds/family-feud-good-answer.mp3" />

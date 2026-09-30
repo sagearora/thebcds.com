@@ -332,6 +332,9 @@
 .board { min-width:0; width:min(1100px, 100%); }
 .answer { width:100%; padding:0; border:0; background:transparent; color:inherit; font:inherit; }
 .answer:focus-visible, .control:focus-visible { outline:3px solid white; outline-offset:5px; }
+.answer:disabled { cursor:default; }
+.control:disabled { cursor:default; opacity:.6; transform:none; }
+.revealNext { margin-top:8px; }
 .answer-text { overflow-wrap:anywhere; }
 .mystery { overflow:hidden; }
 .face { grid-template-columns:110px minmax(0, 1fr); }

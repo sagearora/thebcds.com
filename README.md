@@ -37,8 +37,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Dental Feud
 
-Open `/feud` to play the meeting game. Click an answer or press its number to
-reveal it. Use **R** to reset the board, **← / →** to change questions, and **F**
+Open `/feud` to play the meeting game. Click **Reveal Next Answer** or press
+**Space** to reveal answers from bottom to top: **3 → 2 → 1**. Only the next
+answer can be revealed, so the top answer is saved for last.
+Use **R** to reset the board, **← / →** to change questions, and **F**
 (or the Fullscreen button) for fullscreen. Questions wrap around at either end;
 changing questions starts a fresh board. Sound can be toggled on the page.
 
@@ -56,8 +58,9 @@ plain question text and an ordered list of answers (top answer first):
 
 Add, remove, or reorder entries and answers in this file. Keep at least one
 question and one answer per question; use double quotes and no trailing commas.
-The answer count and question counter update automatically. Number keys 1–9
-reveal the corresponding answers; all answers can also be clicked. Rebuild and
+The answer count and question counter update automatically. Keep answers in
+rank order (top answer first); the game reveals them in reverse order. You can
+also click the next answer or press its number (1–9). Rebuild and
 redeploy the website after editing the JSON to update the live game.
 
 Reveal and applause clips use the supplied external audio URLs. If the reveal
