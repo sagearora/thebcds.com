@@ -34,7 +34,7 @@ export default function ExecutivePage() {
     {
       name: "Joe Schacher",
       role: "Outreach Coordinator",
-      email: "memberships@brantcountydentalsociety.com",
+      email: "membership@brantcountydentalsociety.com",
       image: "/images/executive/joe-Schacher.jpg",
       borderColor: "#8FB800",
     },
